@@ -4,8 +4,8 @@ Prince Processor
 Resurrected password dictionary generator following [Hashcat Prince Processor](https://github.com/hashcat/princeprocessor).
 Corrects the original's overflow errors and outputs a complete and unique dictionary from a custom wordlist.
 
-Contrary to the original, this version generates a list without word-repetition, so passphrases will contain each word only once. For example: `foo bar; foo bar baz`.<br> 
-Next to that output is generated with a space separator. This aides in applying hashcat rules during a dictionary attack. 
+Contrary to the original, this version generates a list without word-repetition, so passphrases will contain each word only once. <br> 
+Next to that output is generated with a word separator (space by default). This aides in applying hashcat rules during a dictionary attack. 
 
 # Install & options
 
@@ -22,10 +22,7 @@ Usage of princeprocessor:
   -o, --output string      Output file. Use stdout when omitted
   -s, --separator string   Separator used between elements (default " ")
   -i, --wordlist string    Path to input wordlist file. Use stdin when omitted
-
 ```
-Found a bug? Please open an issue.
-
 
 # How to use
 
@@ -69,12 +66,14 @@ $$
 
 Numerical equation: `60×59 + 60×59×58 + 60×59×58×57 + 60×59×58×57×56`
 
-In contrast, computing less combinations will be much faster. For example (M=4): 11,912,100 chains. A whopping 655 million less. Logically, using a higher maximum value will take much longer and be taxing you disk space and I/O. 
+In contrast, computing less combinations will be much faster. For example (M=4): 11,912,100 chains; a whopping 655 million less than M=5. Logically, using a higher maximum value will take much longer and be taxing your disk space and I/O. 
 
 
 ## Optional execution (Linux/Mac only)
 
-It may be advantageous to write to RAM instead of disk. This negates disk I/O, making the program much faster, but **only viable when you have lots of spare RAM**.
+It may be advantageous to write to RAM instead of disk. This negates disk I/O, making the program much faster, but is **only viable when you have lots of spare RAM**.
+
+For example:
 
 ```shell
 mkdir /mnt/ramdisk
@@ -86,3 +85,5 @@ then run:
 princeprocessor --min=2 --max=5 --wordlist=wordlist.txt -o /mnt/ramdisk/output.dict
 ```
 
+
+Found a bug? Please open an issue.
