@@ -58,8 +58,8 @@ func processWordlist(inputFile string) ([]string, error) {
 func init() {
 	minElems = flag.IntP("min", "n", 2, "Minimum number of elements per chain")
 	maxElems = flag.IntP("max", "m", 4, "Maximum number of elements per chain")
-	wordlist = flag.StringP("wordlist", "i", "", "Path to input wordlist file. Use stdin when omitted")
-	outputFile = flag.StringP("output", "o", "", "Output file. Use stdout when omitted")
+	wordlist = flag.StringP("wordlist", "i", "", "Path to input wordlist file (default STDIN)")
+	outputFile = flag.StringP("output", "o", "", "Path to output file (default STDOUT)")
 	wordSeparator := flag.StringP("separator", "s", string(Separator), "Separator used between elements")
 	flag.Parse()
 

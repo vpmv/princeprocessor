@@ -17,11 +17,11 @@ go install github.com/vpmv/princeprocessor
 princeprocessor help
 
 Usage of princeprocessor:
-  -m, --max int            Maximum number of elements per chain (default 4)
   -n, --min int            Minimum number of elements per chain (default 2)
-  -o, --output string      Output file. Use stdout when omitted
+  -m, --max int            Maximum number of elements per chain (default 4)
+  -o, --output string      Path to output file (default STDOUT)
+  -i, --wordlist string    Path to input wordlist file (default STDIN)
   -s, --separator string   Separator used between elements (default " ")
-  -i, --wordlist string    Path to input wordlist file. Use stdin when omitted
 ```
 
 # How to use
